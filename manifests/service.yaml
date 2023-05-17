@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gomodule1
+  namespace: namespace-workflow-1684289779500
+spec:
+  type: LoadBalancer
+  selector:
+    app: gomodule1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
