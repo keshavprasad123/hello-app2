@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gomodule1
+  name: test1
   labels:
-    app: gomodule1
-  namespace: namespace-workflow-1684289779500
+    app: test1
+  namespace: namespace-workflow-1684289981950
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gomodule1
+      app: test1
   template:
     metadata:
       labels:
-        app: gomodule1
+        app: test1
     spec:
       containers:
-        - name: gomodule1
-          image: acrworkflow1684289779500.azurecr.io/image-workflow-1684289779500:latest
+        - name: test1
+          image: acrworkflow1684289981950.azurecr.io/image-workflow-1684289981950:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080

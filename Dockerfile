@@ -1,12 +1,13 @@
 FROM golang:1.20
-ENV PORT 80
-EXPOSE 80
+ENV PORT 8080
+EXPOSE 8080
 
 WORKDIR /go/src/app
 COPY . .
 
-RUN go mod vendor
-RUN go build -v -o app
+ARG GO111MODULE=off
+RUN go get -d -v ./...
+RUN go build -v -o app ./...
 RUN mv ./app /go/bin/
 
 CMD ["app"]
